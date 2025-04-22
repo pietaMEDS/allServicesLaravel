@@ -36,7 +36,7 @@ class CategoryController extends Controller
         $category = Categories::find($id);
         if ($category) {
             $validated = $request->validate([
-                'name' => 'unique:categories|max:255|string',
+                'name' => 'max:255|string',
                 'description' => 'string|max:255',
                 'priority' => 'integer|min:0|max:100',
             ]);
